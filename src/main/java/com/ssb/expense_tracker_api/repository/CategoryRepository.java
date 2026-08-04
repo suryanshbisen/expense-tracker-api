@@ -18,8 +18,8 @@ public interface CategoryRepository extends JpaRepository<Category, UUID> {
     boolean existsByUserIdAndNameIgnoreCase(UUID id,String name);
 
     @Query("""
-                SELECT c FROM Category c 
-                WHERE c.user.id=:userId 
+                SELECT c FROM Category c
+                WHERE c.user.id=:userId
                 AND LOWER(c.name) LIKE(CONCAT('%',:keyword,'%'))
                 ORDER BY c.name ASC
         """)
