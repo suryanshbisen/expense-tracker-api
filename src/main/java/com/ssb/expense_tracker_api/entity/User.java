@@ -52,7 +52,7 @@ public class User {
     private Instant updatedAt;
 
     @PrePersist
-    void onCrate(){
+    void onCreate(){
         Instant now=Instant.now();
         createdAt=now;
         updatedAt=now;
